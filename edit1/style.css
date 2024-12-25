@@ -836,11 +836,12 @@
 }
 .rectangle-23 {
   border-radius: 0px;
-  width: 481px;
-  height: 381px;
+  width: 1133px;
+  height: 518px;
   position: absolute;
-  left: 209px;
-  top: 615px;
+  left: 634px;
+  top: 983px;
+  transform: translate(-4px, -533px);
   overflow: visible;
 }
 .rectangle-6 {
