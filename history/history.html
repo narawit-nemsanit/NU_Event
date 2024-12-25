@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFF4E8;
+            color: #333;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #FFEAD2;
+            padding: 20px 0;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar .logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar nav ul li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            width: 100%;
+            padding: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar nav ul li a img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .sidebar nav ul li a.active {
+            background-color: #FFD8A9;
+            border-radius: 12px;
+            color: #000;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #FFD8A9;
+        }
+
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+            width: calc(100% - 200px);
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        section h1 {
+            font-size: 28px;
+            color: #FF914D;
+            margin-bottom: 20px;
+        }
+
+        .events {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-card {
+            display: flex;
+            background-color: #FFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            align-items: flex-start;
+            gap: 20px;
+            border: 1px solid #F5CBA7;
+        }
+
+        .event-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .event-details {
+            flex-grow: 1;
+        }
+
+        .event-details h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .event-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .event-details a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #FF914D;
+        }
+
+        .event-details a:hover {
+            text-decoration: underline;
+        }
+
+        .event-status {
+            font-size: 16px;
+            color: white;
+            background-color: #FF914D;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-weight: bold;
+        }
+
+        .event-wrapper {
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+
+            .sidebar nav ul li a {
+                font-size: 12px;
+            }
+
+            .main-content {
+                margin-left: 80px;
+                width: calc(100% - 80px);
+            }
+
+            .event-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-card img {
+                width: 100%;
+                height: auto;
+            }
+
+            .event-details {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="NU Event Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Home/index.html"><img src="images/home.png" alt="Home Icon"> </a></li>
+                    <li><a href="calendar.html"><img src="images/calendar.png" alt="Calendar Icon"> </a></li>
+                    <li><a href="favorites.html"><img src="images/star.png" alt="Favorites Icon"> </a></li>
+                    <li><a href="/map/map.html"><img src="images/map.png" alt="Map Icon"> </a></li>
+                    <li><a href="/add/add1.html"><img src="images/add.png" alt="Add Icon"> </a></li>
+                    <li><a href="/edit/index.html"><img src="images/pen.png" alt="Edit Icon"> </a></li>
+                    <li><a href="/history/history.html" class="active"><img src="images/history.png" alt="History Icon"> </a></li>
+                    <li><a href="/delete/delete (1).html"><img src="images/bin.png" alt="Delete Icon"> </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Event in NU is completed...">
+                </div>
+                <div class="header-icons">
+                    <button><i class="fas fa-bell"></i></button>
+                    <button><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <section>
+                <h1>Event History</h1>
+                <div class="events">
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-wrapper">
+                            <img src="activity/image-13.png" alt="Concert">
+                            <span class="event-status">Completed</span>
+                        </div>
+                        <div class="event-details">
+                            <h2>คอนเสิร์ตแบบเบิ้มๆ</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> SC9-999</p>
+                            <p><i class="fas fa-user"></i> นายสมหมาย ชื่นเป็นนิ่ม</p>
+                            <p>ครั้งแรกของจักรวาล กับคอนเสิร์ตแบบเบิ้มๆ คือลืออะมาจัดกันที่มหาวิทยาลัยนเรศวร คณะวิทยาศาสตร์ SC9-999 ช้าอดหมดนะงับ</p>
+                            <a href="activity/image-13.png">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card">
+                        <div class="event-wrapper">
+                            <img src="activity/image-12.png" alt="Science market">
+                            <span class="event-status">Completed</span>
+                        </div>
+                        <div class="event-details">
+                            <h2>Science market</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> SC9-999</p>
+                            <p><i class="fas fa-user"></i> นายสมหมาย ชื่นเป็นนิ่ม</p>
+                            <p>กิจกรรมที่จัดขึ้นที่คณะวิทยาสตร์ มีร้านค้ามากมายให้คุณได้เลือก</p>
+                            <a href="https://docs.google.com/spreadsheets/">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card">
+                        <div class="event-wrapper">
+                            <img src="activity/image-11.png" alt="NU book fair">
+                            <span class="event-status">Completed</span>
+                        </div>
+                        <div class="event-details">
+                            <h2>NU book fair</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> SC9-999</p>
+                            <p><i class="fas fa-user"></i> นายสมหมาย ชื่นเป็นนิ่ม</p>
+                            <p>งานหนังสือที่มีหนังสือให้เลือกมากมาย หลากหลายหมวดหมู่ และยังมีกิจกรรมสนุกๆให้เข้าร่วมอีกด้วย!</p>
+                            <a href="https://docs.google.com/spreadsheets/">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="event-card">
+                        <div class="event-wrapper">
+                            <img src="activity/image-10.png" alt="Astro Night">
+                            <span class="event-status">Completed</span>
+                        </div>
+                        <div class="event-details">
+                            <h2>Astro Night</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> SC9-999</p>
+                            <p><i class="fas fa-user"></i> นายสมหมาย ชื่นเป็นนิ่ม</p>
+                            <p>Our Starry night! Astro Night 2024 คืนหลอน นอนดูดาว ชวนทุกคนมาสัมผัสความงามของดวงดาว พร้อมกิจกรรมดาราศาสตร์สุดพิเศษ!</p>
+                            <a href="https://docs.google.com/spreadsheets/">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+

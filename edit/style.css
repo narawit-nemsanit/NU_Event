@@ -313,13 +313,12 @@
 }
 .rectangle-32 {
   border-radius: 0px;
-  width: 481px;
-  height: 381px;
+  width: 850px;
+  height: 485px;
   position: absolute;
-  left: 1022px;
-  top: 1137px;
+  left: 792px;
+  top: 620px;
   transform: translate(-4px, -481px);
-  overflow: visible;
 }
 .image-27 {
   border-radius: 15px;
@@ -597,11 +596,11 @@
 }
 .rectangle-23 {
   border-radius: 0px;
-  width: 481px;
-  height: 381px;
+  width: 800px;
+  height: 480px;
   position: absolute;
-  left: 204px;
-  top: 615px;
+  left: 1px;
+  top: 620px;
   transform: translate(-4px, -481px);
   overflow: visible;
 }
@@ -752,11 +751,11 @@
 }
 .rectangle-24 {
   border-radius: 0px;
-  width: 481px;
-  height: 381px;
+  width: 850px;
+  height: 495px;
   position: absolute;
-  left: 615px;
-  top: 614px;
+  left: 380px;
+  top: 130px;
   overflow: visible;
 }
 .rectangle-25 {

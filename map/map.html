@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f3ec;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 160px;  /* Standardized width */
+            background-color: #ffedd5;
+            padding: 20px 0;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed; /* Fixed position */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar .logo {
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            width: 80px; /* Standardized logo size */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 15px; /* Adjusted spacing for consistency */
+        }
+
+        .sidebar nav ul li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px; /* Standardized font size */
+            width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar nav ul li a img {
+            width: 50px;  /* Standardized icon size */
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        /* Highlight active menu item */
+        .sidebar nav ul li a.active {
+            background-color: #ffe4c0;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .sidebar nav ul li a:active {
+            color: #000; /* Change to black on click */
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #ffdcb3; /* Hover effect */
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 160px; /* Offset by sidebar width */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: calc(100% - 60px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .event-card {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            align-items: center;
+        }
+
+        .event-details h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .event-details p {
+            font-size: 14px;
+        }
+
+        .delete-btn {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .delete-btn:hover {
+            background-color: #ff4444;
+        }
+
+        .delete-btn i {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Home/index.html" id="homeLink"><img src="images/home.png" alt="Home Icon"></a></li>
+                    <li><a href="calendar.html" id="calendarLink"><img src="images/calendar.png" alt="Calendar Icon"></a></li>
+                    <li><a href="favorites.html" id="favoritesLink"><img src="images/star.png" alt="Favorites Icon"></a></li>
+                    <li><a href="/map/map.html" id="mapLink"><img src="images/map.png" alt="Map Icon"></a></li>
+                    <li><a href="/add/add1.html" id="addLink"><img src="images/add.png" alt="Add Icon"></a></li>
+                    <li><a href="comment.html" id="commentLink"><img src="images/pen.png" alt="Comment Icon"></a></li>
+                    <li><a href="/history/history.html" id="historyLink"><img src="images/history.png" alt="History Icon"></a></li>
+                    <li><a href="/delete/delete (1).html" id="deleteLink"><img src="images/bin.png" alt="Delete Icon"></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Event in NU">
+                </div>
+                <div class="header-icons">
+                    <button class="notification-btn" onclick="toggleNotification()"><i class="fas fa-bell"></i></button>
+                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <section>
+                <h1 class="orange-text">Naresuan University</h1>
+                <img src="images/test-2-10.png" alt="University Map" class="map-image">
+                <div class="event-list">
+                    <h2 class="orange-text">Event in 2024</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> CSIT Game - 21 December 2024</li>
+                        <li><i class="fas fa-map-marker-alt"></i> CSIT Game - 21 December 2024</li>
+                        <li><i class="fas fa-map-marker-alt"></i> CSIT Game - 21 December 2024</li>
+                        <li><i class="fas fa-map-marker-alt"></i> CSIT Game - 21 December 2024</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Function to highlight the active menu link based on the current page
+        window.onload = function() {
+            // Get the current URL
+            const currentUrl = window.location.pathname;
+            const links = document.querySelectorAll('.sidebar nav ul li a');
+
+            // Loop through the links and check if the href matches the current URL
+            links.forEach(link => {
+                if (link.href.includes(currentUrl)) {
+                    link.classList.add('active'); // Add the 'active' class to the matching link
+                } else {
+                    link.classList.remove('active'); // Remove the 'active' class from others
+                }
+            });
+        }
+    </script>
+</body>
+</html>

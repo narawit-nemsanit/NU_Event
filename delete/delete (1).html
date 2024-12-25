@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFF4E8;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 150px;
+            background-color: #FFEAD2;
+            padding: 20px 0;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar .logo img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar nav ul li {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            width: 100%;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar nav ul li a img {
+            width: 40px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar nav ul li a.active {
+            background-color: #FFD8A9;
+            border-radius: 8px;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #FFD8A9;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 150px;
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            max-width: 600px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        section h1 {
+            font-size: 28px;
+            color: #FF914D;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Event Card Grid */
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        /* Event Card Styles */
+        .event-card {
+            background-color: #FFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border: 1px solid #F5CBA7;
+            text-align: center;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-details h2 {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0 5px;
+        }
+
+        .event-details p {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .event-details a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #FF914D;
+        }
+
+        .event-details a:hover {
+            text-decoration: underline;
+        }
+
+        .delete-btn {
+            background-color: #FF6666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #FF4444;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+
+            .main-content {
+                margin-left: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Home/index.html"><img src="images/home.png" alt="Home"></a></li>
+                    <li><a href="calendar.html"><img src="images/calendar.png" alt="Calendar"></a></li>
+                    <li><a href="favorites.html"><img src="images/star.png" alt="Favorites"></a></li>
+                    <li><a href="/map/map.html"><img src="images/map.png" alt="Map"></a></li>
+                    <li><a href="/edit/index.html"><img src="images/add.png" alt="Add"></a></li>
+                    <li><a href="comment.html"><img src="images/pen.png" alt="Comment"></a></li>
+                    <li><a href="/history/history.html"><img src="images/history.png" alt="History"></a></li>
+                    <li><a href="/delete/delete (1).html" class="active"><img src="images/bin.png" alt="Delete"></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Event to Delete">
+                </div>
+                <div class="header-icons">
+                    <button><i class="fas fa-bell"></i></button>
+                    <button><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <section>
+                <h1>Deleted Events</h1>
+                <div class="events">
+                    <!-- Event Card 1 --> 
+                    <div class="event-card" id="event1">
+                        <img src="activity/image-13.png" alt="Concert">
+                        <div class="event-details">
+                            <h2>Concert</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> Science Event Hall</p>
+                            <a href="activity/image-13.png">View Details</a>
+                        </div>
+                        <button class="delete-btn" onclick="alert('Event Deleted!')">Delete</button> 
+                    </div>
+                    <!-- Additional cards... --> 
+                    <!-- Event Card 2 -->
+                    <div class="event-card" id="event2">
+                        <img src="activity/image-12.png" alt="Science Market">
+                        <div class="event-details">
+                            <h2>Science Market</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> กิจกรรมที่จัดขึ้นที่คณะวิทยศาสตร์</p>
+                            <a href="activity/image-12.png">View Details</a>
+                        </div>
+                        <button class="delete-btn" onclick="deleteEvent('event2')">Delete</button>
+                    </div>
+
+                    <!-- Event Card 3 -->
+                    <div class="event-card" id="event3">
+                        <img src="activity/image-11.png" alt="NU Book Fair">
+                        <div class="event-details">
+                            <h2>NU Book Fair</h2>
+                            <p><i class="fas fa-clock"></i> 01:00 - 01:01 | <i class="fas fa-map-marker-alt"></i> งานหนังสือหลากหลายหมวดหมู่</p>
+                            <a href="activity/image-1ๅ.png">View Details</a>
+                        </div>
+                        <button class="delete-btn" onclick="deleteEvent('event3')">Delete</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div> 
+    <script>
+        function deleteEvent(eventId) {
+            const eventElement = document.getElementById(eventId);
+            if (confirm("Are you sure you want to delete this event?")) {
+                eventElement.remove();
+                alert("Event has been deleted.");
+            }
+        }
+    </script>
+</body>
+</body>
+
+</html>
+
