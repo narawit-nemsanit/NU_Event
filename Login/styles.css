@@ -1,0 +1,169 @@
+/* General Styles */
+.login-container {
+    border-radius: 20px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 240, 210) 50%, rgb(255, 200, 150) 100%);
+    margin-top: 53px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+    padding: 24px 70px;
+  }
+  
+  .content-wrapper {
+    width: 100%;
+    max-width: 1162px;
+  }
+  
+  .two-column-layout {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    width: 58%;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-image {
+    aspect-ratio: 2.65;
+    object-fit: contain;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .secondary-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 409px;
+    align-self: center;
+    margin-top: -23px;
+    max-width: 100%;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    margin-left: 20px;
+  }
+  
+  .login-form-container {
+    display: flex;
+    margin-top: 112px;
+    width: 100%;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    color: rgba(152, 111, 63, 1);
+    font-weight: 700;
+  }
+  
+  .login-title {
+    font-size: 36px;
+  }
+  
+  .welcome-text {
+    font-size: 18px;
+  }
+  
+  .email-input-wrapper,
+  .password-input-wrapper {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    gap: 15px;
+    font-size: 16px;
+    color: rgba(132, 127, 121, 1);
+    padding: 28px 19px;
+    margin-top: 14px; 
+    align-items: center;
+  } 
+  .email-input-wrapper input,
+  .password-input-wrapper input {
+    border: none; /* ลบกรอบ */
+    outline: none; /* ลบขอบตอน focus */
+    background: none; /* ลบพื้นหลัง */
+    font-size: 16px; /* ขนาดข้อความ */
+    color: rgba(132, 127, 121, 1); /* สีข้อความ */
+    flex-grow: 1; /* ให้ input ขยายได้เต็มพื้นที่ */
+  }
+  
+  .input-icon {
+    width: 24px; /* ขนาดไอคอน */
+    aspect-ratio: 1; /* อัตราส่วน */
+    object-fit: contain;
+  }
+  
+  .password-input-wrapper {
+    justify-content: space-between;
+  }
+  
+  .password-input-group {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .visibility-icon {
+    width: 24px; /* ขนาดไอคอน */
+    aspect-ratio: 1; /* อัตราส่วน */
+    cursor: pointer;
+  }
+  
+  .forgot-password {
+    font-size: 20px;
+    align-self: end;
+    margin-top: 8px;
+  }
+  
+  .login-button {
+    border-radius: 20px;
+    background-color: rgba(235, 136, 38, 1);
+    margin-top: 53px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 1);
+    padding: 24px 70px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .signup-text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 14px;
+  }
+  
+  .bold-text {
+    font-weight: 500;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  @media (max-width: 991px) {
+    .login-container {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  
+    .two-column-layout {
+      flex-direction: column;
+    }
+  
+    .right-column {
+      width: 100%;
+    }
+  
+    .password-input-wrapper {
+      padding-right: 20px;
+    }
+  }
+  

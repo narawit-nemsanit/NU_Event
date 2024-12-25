@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Event</title>
+  <link rel="stylesheet" href="style.css"> 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #ffe8d0;
+      display: flex;
+      justify-content: flex-start; /* ขยับไปด้านซ้าย */
+      align-items: flex-start; /* ขยับไปด้านบน */
+      padding: 20px; /* เพิ่มพื้นที่ว่างรอบ ๆ */
+      height: 100vh; 
+      left: 800px;
+      top: px;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      width: 500px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .form-container label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      color: #000;
+    }
+
+    .form-container input,
+    .form-container textarea,
+    .form-container select,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container input[type="file"] {
+      padding: 3px;
+    }
+
+    .form-container .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-container .row input {
+      width: 48%;
+    }
+
+    .form-container .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-container .buttons button {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-container .buttons .cancel-btn {
+      background-color: #ccc;
+      color: #fff;
+    }
+
+    .form-container .buttons .add-btn {
+      background-color: #eb8826;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <img class="rectangle-18" src="rectangle-180.svg" />
+  <img class="image-12" src="image-120.png" />
+  <img class="image-5" src="image-50.png" />
+  <img class="image-7" src="image-70.png" />
+  <img class="image-10" src="image-100.png" />
+  <img class="image-14" src="image-140.png" />
+  <img class="image-22" src="image-220.png" /> 
+  <img class="account-circle" src="account-circle0.svg" />
+  <button class="image-button" onclick="window.location.href='/home/index.html';">
+    <img class="event-nu-1-1" src="event-nu-1-10.png" /> 
+  </button>
+  <button class="image-button" onclick="window.location.href='/edit/index.html';">
+    <img class="edit-03" src="edit-030.svg" alt="Edit Icon">
+  </button>
+  <button class="image-button" onclick="window.location.href='#';">
+    <img class="group-51" src="group-510.svg" alt="Add Icon">
+  </button>
+  <img class="chevron-down" src="chevron-down0.svg" />
+  
+  <div class="form-container">
+    <h1>Add Event</h1>
+    <form action="#" method="post">
+      <!-- Name -->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter event name" required>
+
+      <!-- Date and Time -->
+      <div class="row">
+        <div>
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" placeholder="DD/MM/YY" required>
+        </div>
+        <div>
+          <label for="time">Time</label>
+          <input type="text" id="time" name="time" placeholder="--:--" required>
+        </div>
+      </div>
+
+      <!-- Place -->
+      <label for="place">Place</label>
+      <input type="text" id="place" name="place" placeholder="Enter place" required>
+
+      <!-- Organizer -->
+      <label for="organizer">Organizer</label>
+      <input type="text" id="organizer" name="organizer" placeholder="Organizer name" required>
+
+      <!-- Details -->
+      <label for="details">Details</label>
+      <textarea id="details" name="details" rows="4" placeholder="Event details..." required></textarea>
+
+      <!-- Event Layout & Picture -->
+      <div class="row">
+        <div>
+          <label for="event-layout">Event Layout</label>
+          <input type="file" id="event-layout" name="event-layout">
+        </div>
+        <div>
+          <label for="picture">Picture</label>
+          <input type="file" id="picture" name="picture">
+        </div>
+      </div>
+
+      <!-- Admission Types -->
+      <label for="admission-types">Admission Types</label>
+      <select id="admission-types" name="admission-types" required>
+        <option value="">Choose</option>
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+      </select>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="button" class="cancel-btn" onclick="window.location.href='#';">Cancel</button>
+        <button type="submit" class="add-btn">Add</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
